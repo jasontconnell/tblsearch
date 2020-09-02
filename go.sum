@@ -1,0 +1,12 @@
+github.com/denisenkom/go-mssqldb v0.0.0-20200831201914-36b6ff1bbc10 h1:uuDqxM2PbeYyXcKIo/IP0ZLGDzougMipEBBrCOzr50w=
+github.com/denisenkom/go-mssqldb v0.0.0-20200831201914-36b6ff1bbc10/go.mod h1:xbL0rPBG9cCiLr28tMa8zpbdarY27NDyej4t/EjAShU=
+github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe h1:lXe2qZdvpiX5WZkZR4hgp4KJVfY3nMkvmwbVkpv1rVY=
+github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe/go.mod h1:8vg3r2VgvsThLBIFL93Qb5yWzgyZWhEmBwUJWevAkK0=
+github.com/jasontconnell/conf v1.0.3 h1:KU7j5AOHHsjGFn8kyjmQyCqLjSaZxVQ+2PZ+5tkHKF8=
+github.com/jasontconnell/conf v1.0.3/go.mod h1:DwNCyZCKlP9MdwIxglIqtP7WYXGdCekMkHJd/udRHLk=
+github.com/jasontconnell/sqlhelp v1.0.0 h1:pDWe+xPt22XtYwYHjborfK4vmU/i1dcmh0tKJ0A235E=
+github.com/jasontconnell/sqlhelp v1.0.0/go.mod h1:vNyJYIWMfaEHBynkqzmlVuHlhGoSy9qvQZU47LXeEuk=
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
+golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
