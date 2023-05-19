@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"regexp"
 	"time"
 
 	"github.com/jasontconnell/tblsearch/conf"
@@ -15,10 +16,16 @@ func main() {
 
 	conffile := flag.String("c", "config.json", "the config file with connection string")
 	str := flag.String("s", "", "the string to search")
+	regs := flag.String("r", "", "the regular expression to search")
 	flag.Parse()
 
-	if *str == "" {
-		log.Fatal("need a string to search")
+	if *str == "" && *regs == "" {
+		log.Fatal("need a string or regular expression to search")
+	}
+
+	var reg *regexp.Regexp
+	if *regs != "" {
+		reg = regexp.MustCompile(*regs)
 	}
 
 	cfg := conf.LoadConfig(*conffile)
@@ -27,7 +34,7 @@ func main() {
 		log.Fatal("need a connection string")
 	}
 
-	results, err := process.Search(cfg.ConnectionString, *str)
+	results, err := process.Search(cfg.ConnectionString, *str, reg)
 	if err != nil {
 		log.Fatal("failed searching", err)
 	}

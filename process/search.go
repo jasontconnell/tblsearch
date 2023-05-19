@@ -3,13 +3,14 @@ package process
 import (
 	"errors"
 	"fmt"
+	"regexp"
 	"strings"
 	"sync"
 
 	"github.com/jasontconnell/tblsearch/data"
 )
 
-func Search(connstr, str string) ([]data.SearchResult, error) {
+func Search(connstr, str string, reg *regexp.Regexp) ([]data.SearchResult, error) {
 	tables, err := getSchema(connstr)
 
 	if err != nil {
@@ -34,7 +35,7 @@ func Search(connstr, str string) ([]data.SearchResult, error) {
 				return
 			}
 			for _, r := range rows {
-				results := findInCol(r, str)
+				results := findInCol(r, str, reg)
 
 				for _, res := range results {
 					pos := strings.Index(res.Value, str)
@@ -49,14 +50,16 @@ func Search(connstr, str string) ([]data.SearchResult, error) {
 	return searchResults, nil
 }
 
-func findInCol(row data.RowData, str string) []data.ColData {
+func findInCol(row data.RowData, str string, reg *regexp.Regexp) []data.ColData {
 	cols := []data.ColData{}
 	for _, c := range row.ColData {
 		if c.IsNull {
 			continue
 		}
 
-		if strings.Contains(c.Value, str) {
+		if str != "" && strings.Contains(c.Value, str) {
+			cols = append(cols, c)
+		} else if reg != nil && reg.MatchString(c.Value) {
 			cols = append(cols, c)
 		}
 	}
