@@ -3,9 +3,9 @@ module github.com/jasontconnell/tblsearch
 go 1.20
 
 require (
-	github.com/denisenkom/go-mssqldb v0.12.3
 	github.com/jasontconnell/conf v1.1.1
 	github.com/jasontconnell/sqlhelp v1.0.0
+	github.com/microsoft/go-mssqldb v0.21.0
 )
 
 require (

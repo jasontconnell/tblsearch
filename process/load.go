@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	_ "github.com/denisenkom/go-mssqldb"
 	"github.com/jasontconnell/sqlhelp"
 	"github.com/jasontconnell/tblsearch/data"
+	_ "github.com/microsoft/go-mssqldb"
 )
 
 var NoSearchError = errors.New("Can't search")

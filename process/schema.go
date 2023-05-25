@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	_ "github.com/denisenkom/go-mssqldb"
 	"github.com/jasontconnell/sqlhelp"
 	"github.com/jasontconnell/tblsearch/data"
+	_ "github.com/microsoft/go-mssqldb"
 )
 
 func getSchema(connstr string) ([]data.Table, error) {
